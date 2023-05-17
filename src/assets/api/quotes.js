@@ -1,5 +1,5 @@
 export const getQuotes = async () => {
-    const response = await fetch("http://flightaxis.vercel.app/Quotes");
+    const response = await fetch("https://flightaxis.vercel.app/Quotes");
     const data = await response.json();
     return data;
   };
