@@ -1,0 +1,31 @@
+#navigation{
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffff;
+    align-items: center;
+
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+.logo{
+    width: 80%;
+    margin: 3rem 0 5rem 0;
+}
+
+nav{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    font-size: 1.4rem;
+    font-weight: 500;
+    font-family: var(--secondary-font);
+}
+
+.nav-link{
+    padding: 1rem 0;
+    color: #17A5F7;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    justify-content: center;
+}

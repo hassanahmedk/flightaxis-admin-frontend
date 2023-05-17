@@ -1,0 +1,116 @@
+#main {
+  background-color: #f9fafb;
+}
+
+#header {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 2rem 2rem;
+  gap: 1rem;
+}
+
+.main-heading {
+  color: var(--blue);
+}
+
+.total {
+  margin: 0 0 0 auto;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.total span {
+  color: var(--blue);
+}
+
+.add-flight {
+  margin: 0 2rem 0 auto;
+}
+
+.box {
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  border: 1px solid rgba(99, 99, 99, 0.4);
+  padding: 1rem;
+  background-color: #ffffffcd;
+  font-size: 1.1rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.box-atts {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.25rem 2rem;
+  width: 99%;
+  font-weight: 500;
+}
+
+.box-atts span {
+  font-weight: 600;
+  color: var(--blue);
+  margin-right: 0.2rem;
+}
+
+.airline,
+.leaving_from,
+.going_to,
+.box-heading{
+  grid-column: 1 / span 2;
+  margin-top: 0.5rem;
+}
+
+.side_notes,
+.message {
+  grid-column: 1 / span 2;
+
+}
+
+.going_to {
+  border-bottom: 2px solid rgba(10, 10, 10, 0.2);
+  padding-bottom: 0.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.contact-heading,
+.fare-heading,
+.side_notes-heading {
+  padding-top: 0.75rem;
+  margin-top: 0.5rem;
+  border-top: 2px solid rgba(10, 10, 10, 0.2);
+}
+
+.box-actions {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+#flight-section {
+  overflow-y: scroll;
+}
+
+/*  */
+.flights,
+.bookings,
+.quotes, 
+.messages {
+  overflow-y: scroll;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem 2rem;
+}
+
+
+
+/*  */
+.flight-options{
+  margin: 0 0 1rem 2rem;
+  gap: 1rem;
+  display: flex;
+}
+
+.fare-inputs{
+  display: flex;
+  gap: 4rem;
+}

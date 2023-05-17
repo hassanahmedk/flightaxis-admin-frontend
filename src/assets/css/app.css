@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600&family=Poppins:wght@300;400;500;600&display=swap');
+
+:root{
+    --primary-font: 'Open Sans', sans-serif;
+    --secondary-font: 'Poppins', sans-serif;
+    --blue: #17A5F7;
+}
+
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+body{
+    font-family: var(--primary-font);
+    height: 100vh;
+    width: 100vw;
+    color: rgba(33, 33, 33, 0.781);
+
+}
+
+
+h1, h2, h3, h4, h5, h6{
+    font-family: var(--secondary-font);
+}
+
+a{
+    text-decoration: none;
+
+
+}
+
+.App{
+    height: 100vh;
+    width: 100vw;
+}
+
+
+#landing {
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    background-color: red;
+    /* overflow: hidden; */
+}
+
