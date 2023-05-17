@@ -5,7 +5,7 @@ export const getQuotes = async () => {
   };
   
   export const addQuote = async (formData) => {
-    const response = await fetch("http://flightaxis.vercel.app/Quotes", {
+    const response = await fetch("https://flightaxis.vercel.app/Quotes", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -17,7 +17,7 @@ export const getQuotes = async () => {
   };
   
   export const editQuote = async (id, formData) => {
-    const response = await fetch("http://flightaxis.vercel.app/Quotes", {
+    const response = await fetch("https://flightaxis.vercel.app/Quotes", {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
@@ -30,7 +30,7 @@ export const getQuotes = async () => {
   
   
   export const deleteQuote = async (_id) => {
-    const response = await fetch("http://flightaxis.vercel.app/Quotes", {
+    const response = await fetch("https://flightaxis.vercel.app/Quotes", {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",

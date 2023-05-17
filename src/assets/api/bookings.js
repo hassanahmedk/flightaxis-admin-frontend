@@ -1,11 +1,11 @@
 export const getBookings = async () => {
-    const response = await fetch("http://flightaxis.vercel.app/Bookings");
+    const response = await fetch("https://flightaxis.vercel.app/Bookings");
     const data = await response.json();
     return data;
   };
   
   export const addBooking = async (formData) => {
-    const response = await fetch("http://flightaxis.vercel.app/Bookings", {
+    const response = await fetch("https://flightaxis.vercel.app/Bookings", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -17,7 +17,7 @@ export const getBookings = async () => {
   };
   
   export const editBooking = async (id, formData) => {
-    const response = await fetch("http://flightaxis.vercel.app/Bookings", {
+    const response = await fetch("https://flightaxis.vercel.app/Bookings", {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
@@ -30,7 +30,7 @@ export const getBookings = async () => {
   
   
   export const deleteBooking = async (_id) => {
-    const response = await fetch("http://flightaxis.vercel.app/Bookings", {
+    const response = await fetch("https://flightaxis.vercel.app/Bookings", {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",
