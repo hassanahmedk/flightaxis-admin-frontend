@@ -35,7 +35,7 @@ export const deleteFlight = async (_id) => {
     headers: {
       "Content-Type": "application/json",
     },
-    body: JSON.stringify({ _id: _id }),
+    body: JSON.stringify({ id: _id }),
   });
   const data = await response.json();
   return data;
