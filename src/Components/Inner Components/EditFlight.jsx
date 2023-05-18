@@ -9,7 +9,7 @@ import DialogActions from "@mui/material/DialogActions";
 import IconButton from "@mui/material/IconButton";
 import CloseIcon from "@mui/icons-material/Close";
 import Typography from "@mui/material/Typography";
-import { TextField } from "@mui/material";
+import { FormControl, InputLabel, MenuItem, Select, TextField } from "@mui/material";
 import AutocompleteAirports from "./AutocompleteAirports";
 import { addFlight, editFlight } from "../../assets/api/flights";
 
@@ -132,14 +132,25 @@ export default function EditFlight(props) {
             padding: "4rem 2rem",
           }}
         >
-          <TextField
-            name="airline"
-            value={formData.airline}
-            id="outlined-basic"
-            label="Airline"
-            variant="outlined"
-            onChange={handleFormChange}
-          />
+           <FormControl fullWidth>
+            <InputLabel id="demo-simple-select-label">Airline</InputLabel>
+            <Select
+              labelId="demo-simple-select-label"
+              id="demo-simple-select"
+              name="airline"
+              value={formData.airline}
+              label="Airline"
+              onChange={handleFormChange}
+            >
+              <MenuItem value={"Air France"}>Air France</MenuItem>
+              <MenuItem value={"KLM"}>KLM</MenuItem>
+              <MenuItem value={"British Airways"}>British Airways</MenuItem>
+              <MenuItem value={"Lufthansa Airways"}>Lufthansa</MenuItem>
+              <MenuItem value={"Qatar Airways"}>Qatar Airways</MenuItem>
+              <MenuItem value={"Virgin Atlantic Airways"}>Virgin Atlantic Airways</MenuItem>
+              <MenuItem value={"Royal Air Maroc"}>Royal Air Maroc</MenuItem>
+            </Select>
+          </FormControl>
           <AutocompleteAirports
             name="leaving_from"
             value={formData.leaving_from}

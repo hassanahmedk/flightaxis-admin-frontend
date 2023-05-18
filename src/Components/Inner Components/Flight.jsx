@@ -53,7 +53,8 @@ function Flight(props) {
       </div>
       <div className="box-actions">
         <CreateIcon onClick={() => setEditFlightDialog(true)} />
-        <DeleteIcon onclick={()=>setConfirmDeleteDialog(true)} />
+        <DeleteIcon onClick={()=>{setConfirmDeleteDialog(true)
+        }} />
       </div>
     </div>
   );

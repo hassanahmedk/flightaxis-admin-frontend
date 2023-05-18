@@ -1,3 +1,4 @@
+import { Button } from '@mui/material'
 import React from 'react'
 
 function Header(props) {
@@ -13,9 +14,15 @@ function Header(props) {
             {props.label} Details:
         </h2>
         {
-            props.label==="Flight" && <button className="add-flight" onClick={props.openAddFlightDialog}>
+            props.label==="Flight" && <Button variant="contained" 
+            sx={{
+                alignSelf:"end",
+                justifySelf:"end",
+        
+        }}
+            className="add-flight" onClick={props.openAddFlightDialog}>
                 Add Flight
-            </button>
+            </Button>
         }
     </div>
   )
