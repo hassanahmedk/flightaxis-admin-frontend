@@ -15,7 +15,10 @@ export default function ConfirmDelete(props) {
         alert("deleted flight");
         props.handleClose();
       })
-      .catch((error) => alert("an error occured!"));
+      .catch((error) => {
+        alert("an error occured!");
+        console.log(error);
+    });
   };
   return (
     <div>
