@@ -230,10 +230,10 @@ export default function AddFlight(props) {
             setValue={handleAirportValue}
             onChange={handleFormChange}
           />
-
-{formData.months_fare.map((month)=>{
+<div className="fare-inputs">
+          {formData.months_fare.map((month)=>{
             return(
-              <div className="fare-inputs"> 
+              <div className="fare-input"> 
                 <TextField
                   name={month.month+"-leaving_fare"}
                   value={month.leaving_fare}
@@ -246,6 +246,7 @@ export default function AddFlight(props) {
                 </div>
             )
           })}
+          </div>
         </DialogContent>
         <DialogActions>
           <Button autoFocus onClick={handleSubmit}>
