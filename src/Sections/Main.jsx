@@ -8,6 +8,7 @@ import Quotes from "../Components/Quotes";
 import "../assets/css/main.css"
 
 function Main() {
+
   return (
     <div id="main">
       <Routes className="routes">
