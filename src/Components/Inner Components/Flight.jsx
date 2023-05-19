@@ -35,19 +35,11 @@ function Flight(props) {
         <div className="going_to">
           <span>Going to: </span> {props.going_to}
         </div>
-        <h3 className="fares-heading box-heading">Fares (Leaving)</h3>
+        <h3 className="fares-heading box-heading">Fares</h3>
         {props.months_fare.map((month) => {
           return (
             <div className="kids_fare">
               <span>{month.month}: </span> {month.leaving_fare}
-            </div>
-          );
-        })}
-        <h3 className="fares-heading box-heading">Fares (Returning)</h3>
-        {props.months_fare.map((month) => {
-          return (
-            <div className="kids_fare">
-              <span>{month.month}: </span> {month.returning_fare}
             </div>
           );
         })}

@@ -111,9 +111,12 @@
 }
 
 .fare-inputs{
-  display: flex;
-  gap: 4rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
 }
+
+
 
 
 @media (max-width:450px){
@@ -126,6 +129,7 @@
   .main-heading {
     font-size: 1rem;
   }
+
 
   
 }

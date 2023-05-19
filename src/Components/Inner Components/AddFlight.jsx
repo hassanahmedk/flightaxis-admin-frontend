@@ -243,15 +243,6 @@ export default function AddFlight(props) {
                   variant="outlined"
                   onChange={handleMonthChange}
                 />
-                <TextField
-                  name={month.month+"-returning_fare"}
-                  value={month.returning_fare}
-                  type="Number"
-                  id={month.month}
-                  label={`${month.month} Returning Fare`}
-                  variant="outlined"
-                  onChange={handleMonthChange}
-                />
                 </div>
             )
           })}

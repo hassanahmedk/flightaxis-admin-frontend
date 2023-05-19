@@ -172,9 +172,10 @@ export default function EditFlight(props) {
             initialValue={formData.going_to}
           />
 
+          <div className="fare-inputs">
           {formData.months_fare.map((month)=>{
             return(
-              <div className="fare-inputs"> 
+              <div className="fare-input"> 
                 <TextField
                   name={month.month+"-leaving_fare"}
                   value={month.leaving_fare}
@@ -184,18 +185,10 @@ export default function EditFlight(props) {
                   variant="outlined"
                   onChange={handleMonthChange}
                 />
-                <TextField
-                  name={month.month+"-returning_fare"}
-                  value={month.returning_fare}
-                  type="Number"
-                  id={month.month}
-                  label={`${month.month} Returning Fare`}
-                  variant="outlined"
-                  onChange={handleMonthChange}
-                />
                 </div>
             )
           })}
+          </div>
         </DialogContent>
         <DialogActions>
           <Button autoFocus onClick={handleSubmit}>
