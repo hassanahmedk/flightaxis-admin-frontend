@@ -56,7 +56,7 @@ export default function ConfirmDelete(props) {
         aria-labelledby="alert-dialog-title"
         aria-describedby="alert-dialog-description"
       >
-        <DialogTitle sx={{fontSize:"2rem"}} id="alert-dialog-title">{`Confirm Delete?`}</DialogTitle>
+        <DialogTitle sx={{fontSize:"1.5rem"}} id="alert-dialog-title">{`Confirm Delete?`}</DialogTitle>
         <DialogContent>Are you sure you want to delete this {props.whatToDelete}?</DialogContent>
         <DialogActions>
           <Button onClick={props.handleClose}>No</Button>
