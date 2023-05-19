@@ -17,6 +17,7 @@ function Flight(props) {
         open={confirmDeleteDialog}
         handleClose={() => setConfirmDeleteDialog(false)}
         _id={props._id}
+        whatToDelete = "flight"
       />
       <EditFlight
         open={editFlightDialog}

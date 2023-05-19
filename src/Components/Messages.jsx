@@ -18,11 +18,13 @@ function Messages() {
         {messages.map((message) => {
           return (
             <Message
+              _id={message._id}
               name={message.name}
               email={message.email}
               phone={message.phone}
               date={message.date}
               message={message.message}
+              whatToDelete={"message"}
             />
           );
         })}

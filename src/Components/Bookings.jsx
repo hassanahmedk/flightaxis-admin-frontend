@@ -19,6 +19,7 @@ function Bookings() {
         {bookings.map((booking) => {
           return (
             <Request
+            _id={booking._id}
             airline={booking.airline}
             customerName={booking.customerName}
             leaving_from={booking.leaving_from}
@@ -36,6 +37,7 @@ function Bookings() {
             submittedOn={booking.submittedOn}
             side_notes={booking.side_notes}
             label="Booking"
+            whatToDelete="booking"
             />
           );
         })}

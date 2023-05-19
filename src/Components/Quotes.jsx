@@ -19,6 +19,7 @@ function Quotes() {
         {quotes.map((quote) => {
           return (
             <Request
+            _id={quote._id}
             airline={quote.airline}
             customerName={quote.customerName}
             leaving_from={quote.leaving_from}
@@ -36,6 +37,7 @@ function Quotes() {
             submittedOn={quote.submittedOn}
             side_notes={quote.side_notes}
             label="Quote"
+            whatToDelete="quote"
             />
           );
         })}

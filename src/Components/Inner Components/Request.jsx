@@ -4,17 +4,19 @@ import DeleteIcon from "@mui/icons-material/Delete";
 import CreateIcon from "@mui/icons-material/Create";
 import { deleteFlight } from "../../assets/api/flights";
 import EditFlight from "./EditFlight";
+import ConfirmDelete from "./ConfirmDelete";
 
 function Request(props) {
+  const [confirmDeleteDialog, setConfirmDeleteDialog] = useState(false);
 
-  const handleDelete = () => {
-    deleteFlight(props._id)
-      .then((data) => alert("deleted flight"))
-      .catch((error) => alert("an error occured!"));
-  };
   return (
     <div className="box">
-
+<ConfirmDelete
+        open={confirmDeleteDialog}
+        handleClose={() => setConfirmDeleteDialog(false)}
+        _id={props._id}
+        whatToDelete = {props.whatToDelete}
+      />
       <div className="box-atts">
         <h4 className="flight-heading box-heading">
             {props.label}
@@ -78,7 +80,8 @@ function Request(props) {
 
       </div>
       <div className="box-actions">
-        <DeleteIcon onclick={handleDelete} />
+        <DeleteIcon  onClick={()=>{setConfirmDeleteDialog(true)
+        }} />
       </div>
     </div>
   );

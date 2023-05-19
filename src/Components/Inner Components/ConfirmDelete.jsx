@@ -6,16 +6,47 @@ import DialogContent from "@mui/material/DialogContent";
 import DialogContentText from "@mui/material/DialogContentText";
 import DialogTitle from "@mui/material/DialogTitle";
 import { deleteFlight } from "../../assets/api/flights";
+import { deleteBooking } from "../../assets/api/bookings";
+import { deleteQuote } from "../../assets/api/quotes";
+import { deleteMessage } from "../../assets/api/messages";
 
 export default function ConfirmDelete(props) {
     
   const handleDelete = () => {
-    deleteFlight(props._id)
+    if(props.whatToDelete === "flight"){
+      deleteFlight(props._id)
+        .then((data) => {
+          alert("deleted flight");
+          props.handleClose();
+          window.location.reload()
+        })
+        .catch((error) => alert("an error occured!"));
+    } else if(props.whatToDelete === "booking"){
+      deleteBooking(props._id)
       .then((data) => {
-        alert("deleted flight");
-        props.handleClose();
-      })
-      .catch((error) => alert("an error occured!"));
+        alert("deleted booking");
+          props.handleClose();
+          window.location.reload()
+        })
+        .catch((error) => alert("an error occured!"));
+      } else if(props.whatToDelete === "quote"){
+        deleteQuote(props._id)
+        .then((data) => {
+          alert("deleted quote");
+          props.handleClose();
+          window.location.reload()
+        })
+        .catch((error) => alert("an error occured!"));
+      } else if(props.whatToDelete === "message"){
+        console.log(props.whatToDelete);
+        deleteMessage(props._id)
+        .then((data) => {
+          alert("deleted quote");
+          props.handleClose();
+          window.location.reload()
+        })
+        .catch((error) => alert("an error occured!"));
+    }
   };
   return (
     <div>
@@ -25,8 +56,8 @@ export default function ConfirmDelete(props) {
         aria-labelledby="alert-dialog-title"
         aria-describedby="alert-dialog-description"
       >
-        <DialogTitle id="alert-dialog-title">{"Confirm Delete?"}</DialogTitle>
-        <DialogContent></DialogContent>
+        <DialogTitle sx={{fontSize:"2rem"}} id="alert-dialog-title">{`Confirm Delete?`}</DialogTitle>
+        <DialogContent>Are you sure you want to delete this {props.whatToDelete}?</DialogContent>
         <DialogActions>
           <Button onClick={props.handleClose}>No</Button>
           <Button onClick={handleDelete} autoFocus>
