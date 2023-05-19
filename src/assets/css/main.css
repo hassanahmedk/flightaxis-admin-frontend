@@ -114,3 +114,18 @@
   display: flex;
   gap: 4rem;
 }
+
+
+@media (max-width:450px){
+  .total {
+    margin: 0 0 0 auto;
+    font-size: 1rem;
+    font-weight: 600;
+  }
+  
+  .main-heading {
+    font-size: 1rem;
+  }
+
+  
+}
