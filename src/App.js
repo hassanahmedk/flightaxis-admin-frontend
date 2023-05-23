@@ -4,6 +4,8 @@ import "./assets/css/app.css"
 import Main from "./Sections/Main";
 import Navigation from "./Sections/Navigation";
 
+
+
 function App() {
   return (
     <div className="App">
@@ -14,6 +16,7 @@ function App() {
         </div>
       </BrowserRouter>
     </div>
+
   );
 }
 
