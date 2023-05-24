@@ -20,11 +20,11 @@ function Quotes() {
           return (
             <Request
             _id={quote._id}
-            airline={quote.airline}
+            name={quote.name}
             customerName={quote.customerName}
             leaving_from={quote.leaving_from}
             going_to={quote.going_to}
-            trip_type={quote.trip_type}
+            trip_type={'Return'}
             departing_on={quote.departing_on}
             returning_on={quote.returning_on}
             no_of_passengers={quote.no_of_passengers}

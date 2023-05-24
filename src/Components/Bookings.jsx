@@ -8,7 +8,7 @@ function Bookings() {
     ]);
   
     useEffect(() => {
-      getBookings().then((data) => setBookings(data));
+      getBookings().then((data) => {setBookings(data); console.log(data)});
     }, []);
   
   return (
@@ -20,6 +20,7 @@ function Bookings() {
           return (
             <Request
             _id={booking._id}
+            name={booking.name}
             airline={booking.airline}
             customerName={booking.customerName}
             leaving_from={booking.leaving_from}
