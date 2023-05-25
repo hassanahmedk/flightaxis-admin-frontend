@@ -12,6 +12,7 @@ function Bookings() {
     }, []);
   
   return (
+    
     <div id="bookings">
       <Header label="Booking" count={bookings.length} />
 
