@@ -57,16 +57,16 @@ function Request(props) {
         <div className="no_of_passengers">
           <span>No of passengers: </span> {props.no_of_passengers}
         </div>
-        {/* <div className="adults">
-          <span>Adults: </span> {props.adults}
+        <div className="adults">
+          <span>Adults: </span> {props.label==="Booking"  ? props.adults:props.no_of_passengers}
         </div>
         <div className="kids">
-          <span>Kids: </span> {props.kids}
+          <span>Kids: </span> {props.label==="Booking"  ? props.kids:0}
         </div>
         <div className="infants">
-          <span>Infants: </span> {props.infants}
+          <span>Infants: </span> {props.label==="Booking" ? props.infants:0}
         </div>
-         */}
+        
          {
           props.label !== "Quote" &&
           <>

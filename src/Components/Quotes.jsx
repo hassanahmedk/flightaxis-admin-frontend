@@ -8,7 +8,9 @@ function Quotes() {
     ]);
   
     useEffect(() => {
-      getQuotes().then((data) => setQuotes(data));
+      getQuotes().then((data) => {setQuotes(data)
+        console.log(data)
+      });
     }, []);
   
   return (
