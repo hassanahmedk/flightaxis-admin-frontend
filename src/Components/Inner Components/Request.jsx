@@ -54,11 +54,12 @@ function Request(props) {
           <span>Returning on: </span> {props.returning_on}
         </div>
         }
-        {props.label==="Quote" &&
+     
           <div className="no_of_passengers">
-            <span>No of passengers: </span> {props.no_of_passengers}
+            <span>No of passengers: </span> 
+            { props.label==="Booking" ? parseInt(props.adults)+parseInt(props.kids)+parseInt(props.infants) :props.no_of_passengers}
           </div>
-        }
+        
         <div className="adults">
           <span>Adults: </span> {props.label==="Booking"  ? props.adults:props.no_of_passengers}
         </div>
