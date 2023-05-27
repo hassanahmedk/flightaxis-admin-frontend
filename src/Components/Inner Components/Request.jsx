@@ -11,16 +11,14 @@ function Request(props) {
 
   return (
     <div className="box">
-<ConfirmDelete
+      <ConfirmDelete
         open={confirmDeleteDialog}
         handleClose={() => setConfirmDeleteDialog(false)}
         _id={props._id}
-        whatToDelete = {props.whatToDelete}
+        whatToDelete={props.whatToDelete}
       />
       <div className="box-atts">
-        <h4 className="flight-heading box-heading">
-            {props.label}
-        </h4>
+        <h4 className="flight-heading box-heading">{props.label}</h4>
         <div className="name">
           <span>Name: </span> {props.name}
         </div>
@@ -36,64 +34,65 @@ function Request(props) {
         <div className="going_to">
           <span>Going to: </span> {props.going_to}
         </div>
-        {
-          props.label==="Booking" && 
+        {props.label === "Booking" && (
           <div className="airline">
             <span>Airline: </span> {props.airline}
           </div>
-        }
+        )}
         {/* <div className="trip_type">
           <span>Trip type: </span> {props.trip_type}
         </div> */}
         <div className="departing_on">
           <span>Departing on: </span> {props.departing_on}
         </div>
-        {
-        props.trip_type==="Return" && 
-        <div className="returning_on">
-          <span>Returning on: </span> {props.returning_on}
-        </div>
-        }
-     
-          <div className="no_of_passengers">
-            <span>No of passengers: </span> 
-            { props.label==="Booking" ? parseInt(props.adults)+parseInt(props.kids)+parseInt(props.infants) :props.no_of_passengers}
+        {props.trip_type === "Return" && (
+          <div className="returning_on">
+            <span>Returning on: </span> {props.returning_on}
           </div>
-        
-        <div className="adults">
-          <span>Adults: </span> {props.label==="Booking"  ? props.adults:props.no_of_passengers}
+        )}
+
+        <div className="no_of_passengers">
+          <span>No of passengers: </span>
+          {props.label === "Booking"
+            ? parseInt(props.adults) +
+              parseInt(props.kids) +
+              parseInt(props.infants)
+            : props.no_of_passengers}
         </div>
-        <div className="kids">
-          <span>Kids: </span> {props.label==="Booking"  ? props.kids:0}
-        </div>
-        <div className="infants">
-          <span>Infants: </span> {props.label==="Booking" ? props.infants:0}
-        </div>
-        
-         {
-          props.label !== "Quote" &&
+
+        {props.label === "Booking" && (
+          <div className="adults">
+            <span>Adults: </span>
+          </div>
+        )}
+        {props.label === "Booking" && (
+          <div className="kids">
+            <span>Kids: </span>
+          </div>
+        )}
+        {props.label === "Booking" && (
+          <div className="infants">
+            <span>Infants: </span>
+          </div>
+        )}
+
+        {props.label !== "Quote" && (
           <>
-        <h4 className="fare-heading box-heading">
-            Fare
-        </h4>
-        <div className="total_fare">
-          {props.total_fare}
-        </div>
-        <h4 className="side_notes-heading box-heading">
-            Side Notes
-        </h4>
-        <div className="side_notes">
-          {props.side_notes ? props.side_notes : "No side notes added"}
-        </div>
+            <h4 className="fare-heading box-heading">Fare</h4>
+            <div className="total_fare">{props.total_fare}</div>
+            <h4 className="side_notes-heading box-heading">Side Notes</h4>
+            <div className="side_notes">
+              {props.side_notes ? props.side_notes : "No side notes added"}
+            </div>
           </>
-         }
-
-
-
+        )}
       </div>
       <div className="box-actions">
-        <DeleteIcon  onClick={()=>{setConfirmDeleteDialog(true)
-        }} />
+        <DeleteIcon
+          onClick={() => {
+            setConfirmDeleteDialog(true);
+          }}
+        />
       </div>
     </div>
   );
