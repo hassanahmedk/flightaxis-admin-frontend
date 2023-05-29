@@ -1,0 +1,40 @@
+#login{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+    width: 100%;
+    padding: 4% 0;
+    height: 100%;
+    gap: 10rem;
+}
+
+#login > div {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+
+    flex-wrap: wrap;
+}
+
+.login-logo{
+    width: 20%;
+}
+
+.login-heading{
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.login-left{
+    height: 20%;
+}
+
+.login-right{
+    gap: 1rem;
+    height: 80%;
+}
+
+.login-error-msg{
+    color: rgb(183, 0, 0);
+}

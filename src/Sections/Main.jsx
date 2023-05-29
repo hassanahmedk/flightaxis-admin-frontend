@@ -16,6 +16,7 @@ function Main() {
         <Route path="bookings" element={<Bookings />} />
         <Route path="quotes" element={<Quotes />} />
         <Route path="messages" element={<Messages />} />
+        <Route path="messages" element={<Messages />} />
         <Route path="*" element={<Flights />} />
       </Routes>
     </div>
