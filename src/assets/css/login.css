@@ -38,3 +38,7 @@
 .login-error-msg{
     color: rgb(183, 0, 0);
 }
+
+.loader-svg{
+    width: 10%;
+}

@@ -4,16 +4,20 @@ import TextField from "@mui/material/TextField";
 import Person2Icon from "@mui/icons-material/Person2";
 import KeyIcon from "@mui/icons-material/Key";
 
+
 import "../assets/css/login.css";
 import logo from "../assets/images/logo.png";
+import loader from "../assets/images/loader.svg";
 import { Button } from "@mui/material";
 
 function Login(props) {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleLogin = async (e) => {
+    setIsLoading(true);
     e.preventDefault();
 
 
@@ -32,12 +36,15 @@ function Login(props) {
         localStorage.setItem('token', token);
         console.log(response)
         props.setLoggedIn(true);
+        setIsLoading(false);
       } else {
         const errorData = await response.json();
         setError(errorData.message);
+        setIsLoading(false);
       }
     } catch (error) {
       console.error('Login error:', error);
+      setIsLoading(false);
     }
   };
 
@@ -88,7 +95,18 @@ function Login(props) {
             onChange={(e) => setPassword(e.target.value)}
           />
         </Box>
-        <Button sx={{marginTop:"1.5rem"}} variant="contained" onClick={handleLogin}> Login </Button>
+        <Button sx={{marginTop:"1.5rem"}} variant="contained" onClick={handleLogin}> 
+        
+        {
+          isLoading 
+          ?
+          <img className="loader-svg" src={loader} alt="" />
+          :
+          "Login" 
+        }
+          
+        
+        </Button>
       </div>
     </div>
   );
