@@ -28,7 +28,7 @@ function Login(props) {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ username, password }),
+        body: JSON.stringify({ username: username.toLowerCase(), password }),
       });
 
       if (response.ok) {
