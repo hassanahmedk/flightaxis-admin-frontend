@@ -11,7 +11,7 @@ import CloseIcon from "@mui/icons-material/Close";
 import Typography from "@mui/material/Typography";
 import { FormControl, InputLabel, MenuItem, Select, TextField } from "@mui/material";
 import AutocompleteAirports from "./AutocompleteAirports";
-import { addFlight, editFlight } from "../../assets/api/flights";
+import { addPackage, editPackage } from "../../assets/api/packages";
 
 const BootstrapDialog = styled(Dialog)(({ theme }) => ({
   "& .MuiDialogContent-root": {
@@ -51,7 +51,7 @@ BootstrapDialogTitle.propTypes = {
   onClose: PropTypes.func.isRequired,
 };
 
-export default function EditFlight(props) {
+export default function EditPackage(props) {
   const [formData, setFormData] = React.useState(props.data);
 
   const handleFormChange = (event) => {
@@ -72,32 +72,21 @@ export default function EditFlight(props) {
     });
   };
 
-  const handleMonthChange = (event) => {
-    const { name, value } = event.target;
-    const [monthName, fareName] = name.split("-");
-    const newMonthsFare = formData.months_fare.map((month) =>
-      month.month === monthName ? { ...month, [fareName]: value } : month
-    );
-    setFormData((prev)=>{
-        return{
-            ...prev,
-            months_fare: newMonthsFare
-        }
-    });
-  }
+
 
   const handleSubmit = () => {
-    editFlight(formData._id, formData)
+    editPackage(formData._id, formData)
       .then((data) => {
         //setFormData({});
-        alert("Flight edited")
-        props.updateFlightsArray(formData._id, formData);
-      
+        alert("Package edited")
+        props.editPackageArray(formData._id, formData.total_fare);
+        setFormData({})
       })
       .catch((error) => 
       
       {alert("An error occured, please try again!")
         console.log(error);
+        console.log(formData);
     }
       
       );
@@ -121,7 +110,7 @@ export default function EditFlight(props) {
           id="customized-dialog-title"
           onClose={props.handleClose}
         >
-          Add Flight
+          Add Package
         </BootstrapDialogTitle>
         <DialogContent
           dividers
@@ -172,23 +161,18 @@ export default function EditFlight(props) {
             initialValue={formData.going_to}
           />
 
-          <div className="fare-inputs">
-          {formData.months_fare.map((month)=>{
-            return(
-              <div className="fare-input"> 
-                <TextField
-                  name={month.month+"-leaving_fare"}
-                  value={month.leaving_fare}
-                  type="Number"
-                  id={month.month}
-                  label={`${month.month} Leaving Fare`}
-                  variant="outlined"
-                  onChange={handleMonthChange}
-                />
-                </div>
-            )
-          })}
-          </div>
+         
+            <div className="fare-input"> 
+            <TextField
+                name={"total_fare"}
+                value={formData.total_fare}
+                type="Number"
+                label={`Total Fare`}
+                variant="outlined"
+                onChange={handleFormChange}
+            />
+            </div>
+           
         </DialogContent>
         <DialogActions>
           <Button autoFocus onClick={handleSubmit}>

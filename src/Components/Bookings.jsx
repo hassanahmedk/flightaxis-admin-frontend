@@ -8,7 +8,7 @@ function Bookings() {
     ]);
   
     useEffect(() => {
-      getBookings().then((data) => {setBookings(data); console.log(data)});
+      getBookings().then((data) => {setBookings(data.reverse()); console.log(data)});
     }, []);
   
   return (

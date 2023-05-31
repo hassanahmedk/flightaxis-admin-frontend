@@ -8,6 +8,8 @@ import FlightIcon from '@mui/icons-material/Flight';
 import BeenhereIcon from '@mui/icons-material/Beenhere';
 import FindInPageIcon from '@mui/icons-material/FindInPage';
 import EmailIcon from '@mui/icons-material/Email';
+import LocationOnIcon from '@mui/icons-material/LocationOn';
+import WhereToVoteIcon from '@mui/icons-material/WhereToVote';
 import { Button } from "@mui/material";
 
 function Navigation(props) {
@@ -51,7 +53,13 @@ function Navigation(props) {
           backgroundColor: location==="/packages" && "#17A5F7", 
           color: location==="/packages" && "#ffffff", 
         }} className="nav-link" to="/packages">
-          <EmailIcon /> Packages
+          <LocationOnIcon /> Packages
+        </Link>
+        <Link style={{
+          backgroundColor: location==="/packageBookings" && "#17A5F7", 
+          color: location==="/packageBookings" && "#ffffff", 
+        }} className="nav-link" to="/packageBookings">
+          <WhereToVoteIcon /> Package Bookings
         </Link>
       </nav>
       <Button onClick={handleLogout} sx={{margin:"auto 0 2rem 0"}}>Logout</Button>

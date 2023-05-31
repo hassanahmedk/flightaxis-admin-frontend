@@ -93,7 +93,9 @@
 .flights,
 .bookings,
 .quotes, 
-.messages {
+.messages, 
+.packages, 
+.package-bookings {
   overflow-y: scroll;
   display: flex;
   flex-direction: column;

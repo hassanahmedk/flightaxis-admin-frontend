@@ -6,6 +6,8 @@ import Messages from "../Components/Messages";
 import Quotes from "../Components/Quotes";
 
 import "../assets/css/main.css"
+import Packages from "../Components/Packages";
+import PackageBookings from "../Components/PackageBookings";
 
 function Main() {
 
@@ -16,7 +18,8 @@ function Main() {
         <Route path="bookings" element={<Bookings />} />
         <Route path="quotes" element={<Quotes />} />
         <Route path="messages" element={<Messages />} />
-        <Route path="messages" element={<Messages />} />
+        <Route path="packages" element={<Packages />} />
+        <Route path="packageBookings" element={<PackageBookings />} />
         <Route path="*" element={<Flights />} />
       </Routes>
     </div>

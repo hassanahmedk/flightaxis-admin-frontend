@@ -9,6 +9,7 @@ import { deleteFlight } from "../../assets/api/flights";
 import { deleteBooking } from "../../assets/api/bookings";
 import { deleteQuote } from "../../assets/api/quotes";
 import { deleteMessage } from "../../assets/api/messages";
+import { deletePackageBooking } from "../../assets/api/packageBookings";
 
 export default function ConfirmDelete(props) {
     
@@ -42,6 +43,15 @@ export default function ConfirmDelete(props) {
         deleteMessage(props._id)
         .then((data) => {
           alert("deleted quote");
+          props.handleClose();
+          window.location.reload()
+        })
+        .catch((error) => alert("an error occured!"));
+    } else if(props.whatToDelete === "packageBooking"){
+        console.log(props.whatToDelete);
+        deletePackageBooking(props._id)
+        .then((data) => {
+          alert("Deleted Package Booking");
           props.handleClose();
           window.location.reload()
         })
