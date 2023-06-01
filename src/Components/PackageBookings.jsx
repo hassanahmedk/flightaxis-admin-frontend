@@ -9,7 +9,7 @@ function PackageBookings() {
     ]);
   
     useEffect(() => {
-      getPackageBookings().then((data) => {setPackageBookings(data); console.log(data)});
+      getPackageBookings().then((data) => {setPackageBookings(data.reverse());});
     }, []);
   
   return (

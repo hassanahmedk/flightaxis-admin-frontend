@@ -136,7 +136,7 @@
     margin: 0.5rem 0;
   }
 
-  .customer_email, .email{
+  .customer_email, .email, .side_notes{
     word-break: break-all;
   }
 
