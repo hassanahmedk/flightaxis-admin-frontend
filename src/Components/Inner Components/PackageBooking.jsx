@@ -10,7 +10,7 @@ function PackageBooking(props) {
   const [confirmDeleteDialog, setConfirmDeleteDialog] = useState(false);
 
   return (
-    <div className="box">
+    <div className="box package-booking">
       <ConfirmDelete
         open={confirmDeleteDialog}
         handleClose={() => setConfirmDeleteDialog(false)}
@@ -39,6 +39,9 @@ function PackageBooking(props) {
         </div>
         <div className="total_fare">
         <span>Fare: </span> {props.total_fare}
+        </div>
+        <div className="side_notes">
+        <span>Side Notes: </span> {props.side_notes}
         </div>
        
         

@@ -57,7 +57,8 @@ function Navigation(props) {
         </Link>
         <Link style={{
           backgroundColor: location==="/packageBookings" && "#17A5F7", 
-          color: location==="/packageBookings" && "#ffffff", 
+          color: location==="/packageBookings" && "#ffffff",
+          display:"flex", textAlign:"center" 
         }} className="nav-link" to="/packageBookings">
           <WhereToVoteIcon /> Package Bookings
         </Link>

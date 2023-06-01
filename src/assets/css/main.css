@@ -110,6 +110,7 @@
   margin: 0 0 1rem 2rem;
   gap: 1rem;
   display: flex;
+  flex-wrap: wrap;
 }
 
 .fare-inputs{
@@ -118,8 +119,38 @@
   gap: 1rem;
 }
 
+  
+.package-booking .side_notes{
+  margin: 0.5rem 0;
+  padding-top: 0.5rem;
+  border-top: 1px solid #10101044;
+}
 
 
+
+@media (max-width:550px){
+
+
+  .package-booking .customer_email{
+    grid-column: 1 / span 2;
+    margin: 0.5rem 0;
+  }
+
+  .customer_email, .email{
+    word-break: break-all;
+  }
+
+  .box {
+    flex-direction: column;
+  }
+  .box-actions{
+    margin: 1rem 0 0 0 ;
+    display: flex;
+    flex-direction: row;
+    border: 1px solid #10101044;
+  }
+
+}
 
 @media (max-width:450px){
   .total {
@@ -127,10 +158,29 @@
     font-size: 1rem;
     font-weight: 600;
   }
+
+  .message .box-atts{
+    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column;
+    gap:0.5rem;
+  }
   
   .main-heading {
     font-size: 1rem;
+    
   }
+
+  
+}
+@media (max-width:400px){
+.box-atts{
+    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column;
+    gap:0.5rem;
+  }
+  
 
 
   

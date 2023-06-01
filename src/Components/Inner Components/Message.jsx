@@ -11,7 +11,7 @@ function Message(props) {
   const [confirmDeleteDialog, setConfirmDeleteDialog] = useState(false);
 
   return (
-    <div className="box">
+    <div className="box message">
 <ConfirmDelete
         open={confirmDeleteDialog}
         handleClose={() => setConfirmDeleteDialog(false)}
