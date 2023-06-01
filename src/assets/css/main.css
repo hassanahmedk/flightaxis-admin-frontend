@@ -153,6 +153,9 @@
 }
 
 @media (max-width:450px){
+  .box{
+    font-size: 0.85rem;
+  }
   .total {
     margin: 0 0 0 auto;
     font-size: 1rem;
